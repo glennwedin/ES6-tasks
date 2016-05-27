@@ -2,7 +2,7 @@
 *	Rewrite using promises to make the test pass
 */
 
-export function getUser (callback) {
+export default function getUser (callback) {
 	setTimeout(function () {
 		var user = {
 			name: "Glenn",
@@ -11,6 +11,7 @@ export function getUser (callback) {
 		callback(user);
 	}, 1000);
 }
+
 
 /*//Fasit
 export default function getUser() {
