@@ -1,12 +1,43 @@
 //Use async/await to get the return value - Do not use the callback-pattern
 /*
-async function asyncFunc () {
-	var x = 0;
-	setTimeout(function () {
-		await x =  10;
-	}, 3000);
-	return x;
+var getAsyncData = function () {
+	return new Promise(function (resolve, reject) {
+		setTimeout(function () {
+			resolve({data: "Cool stuff", done: true});
+		}, 3000);
+	});
 }
-var resultat = await asyncFunc()
-export default resultat;
+
+var result = null;
+getAsyncData().then(function (res) {
+	result = res;
+});
+
+
 */
+
+//løsningsforslag
+let asyncfunc = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve({data: "Cool stuff", done: true});
+		}, 3000);
+	});
+}
+
+let result;
+let getAsyncData = async function () {
+	result = await asyncfunc();
+}
+
+
+
+
+//Hjelpefunksjon for test
+var getResult = function () {
+	return result;
+}
+export {
+	getAsyncData,
+	getResult
+}

@@ -1,5 +1,5 @@
 /*
-	Rewrite this prototypal nightmare to ES6 Classes
+	Rewrite this prototypal nightmare to beautiful ES6 Classes
 */
 
 function ParentClass () {
