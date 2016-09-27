@@ -2,15 +2,19 @@
 	Rewrite this prototypal nightmare to beautiful ES6 Classes
 */
 
-function ParentClass () {
+function ParentClass() {
 	this.x = 2;
 }
 ParentClass.prototype.add = function (num) {
 	this.x += num;
 }
 
-function SubClass () {
+function SubClass() {
 	ParentClass.call(this);
+}
+
+SubClass.staticMethod = function () {
+	return 42;
 }
 
 SubClass.prototype = Object.create(ParentClass.prototype, {
@@ -24,7 +28,6 @@ SubClass.prototype = Object.create(ParentClass.prototype, {
 SubClass.prototype.constructor = SubClass;
 
 export default SubClass;
-
 
 //Fasit
 /*
@@ -45,6 +48,10 @@ class SubClass extends ClassTest {
 
 	subtract (num) {
 		this.x -= num;
+	}
+
+	static staticMethod () {
+		return 42;
 	}
 }
 

@@ -15,4 +15,8 @@ describe("ES6 Classes", function() {
 		es6class.subtract(10);
 		expect(es6class.x).toEqual(-4);
 	});
+
+	it("should have a static function that returns 42", function () {
+		expect(SubClass.staticMethod()).toBe(42);
+	});
 });

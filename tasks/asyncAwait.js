@@ -1,5 +1,5 @@
-//Use async/await to get the return value - Do not use the callback-pattern
-/*
+//LEAVE THIS HERE
+//Simulating ajax call
 var getAsyncData = function () {
 	return new Promise(function (resolve, reject) {
 		setTimeout(function () {
@@ -8,36 +8,23 @@ var getAsyncData = function () {
 	});
 }
 
+//Use async/await to get the return value and set result - Do not use the callback-pattern
+
 var result = null;
 getAsyncData().then(function (res) {
 	result = res;
 });
 
-
+/*
+//løsningsforslag
+let result = null;
+let asyncData = async function () {
+	result = await getAsyncData();
+}()
 */
 
-//løsningsforslag
-let asyncfunc = () => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve({data: "Cool stuff", done: true});
-		}, 3000);
-	});
-}
 
-let result;
-let getAsyncData = async function () {
-	result = await asyncfunc();
-}
-
-
-
-
-//Hjelpefunksjon for test
-var getResult = function () {
-	return result;
-}
+//export the result
 export {
-	getAsyncData,
-	getResult
+	result
 }
