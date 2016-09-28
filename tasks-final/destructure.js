@@ -9,15 +9,11 @@ function getPerson () {
 	}
 }
 
+let { name, email, age, random } = getPerson();
 
-/*
-*	Rewrite to use destructuring
-*/
-
-var person = getPerson();
 export default {
-	name: person.name,
-	email: person.email,
-	age: person.age,
-	random: person.random
+	name,
+	email,
+	age,
+	random
 }

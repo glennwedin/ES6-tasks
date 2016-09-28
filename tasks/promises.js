@@ -11,21 +11,3 @@ export default function getUser (callback) {
 		callback(user);
 	}, 1000);
 }
-
-/*//Fasit
-export default function getUser() {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			let user = {
-				name: "Glenn",
-				age: 28
-			}
-			resolve(user);
-		}, 1000);
-	});
-}
-*/
-
-/*
-*	Then use Async/Await to read the name in the content
-*/

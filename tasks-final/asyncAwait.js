@@ -10,10 +10,12 @@ var getAsyncData = function () {
 
 //Use async/await to get the return value and set result - Do not use the callback-pattern
 
-var result = null;
-getAsyncData().then(function (res) {
-	result = res;
-});
+let result = null;
+let asyncData = async function () {
+	result = await getAsyncData();
+}()
+
+
 
 //export the result
 export {
